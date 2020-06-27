@@ -1,7 +1,15 @@
+S4: Stanford Stratified Structure Solver (http://fan.group.stanford.edu/S4/)
+
+A program for computing electromagnetic fields in periodic, layered
+structures, developed by Victor Liu (victorliu@alumni.stanford.edu) of the
+Fan group in the Stanford Electrical Engineering Department.
+
 # Installation instructions:
 In principle you should be able to install this on Windows / OS X / Linux using conda and 'conda install -c marcus-o s4'.
 Install in a new environment to avoid incompatabilities.
-I don't have a large test base, so I would appreciate if you let me know if it works (marcus.ossiander at gmail) or not, then I'll try to help).
+I don't have a large test base, so I would appreciate if you let me know if it works (marcus.ossiander at gmail) or not, then I'll try to help.
+
+I was able to compile using conda build on Windows (Visual Studio console), OS X (clang) and Ubuntu (gcc) using the makefiles in conda_recipes using 'conda build s4' in conda_recipes. For high performance computing you might want to compile yourself using the makefiles in makefiles (see below).
 
 # Detailed installation instructions (64-bit Ubuntu 16 or 18):
 ## Key steps:
@@ -42,19 +50,6 @@ to e.g.:
 ```
 
 -------------------------------------
-
-S4: Stanford Stratified Structure Solver (http://fan.group.stanford.edu/S4/)
-
-A program for computing electromagnetic fields in periodic, layered
-structures, developed by Victor Liu (victorliu@alumni.stanford.edu) of the
-Fan group in the Stanford Electrical Engineering Department.
-
-See the S4 manual, in doc/index.html, for a complete
-description of the package and its user interface, as well as
-installation instructions, the license and copyright, contact
-addresses, and other important information.
-
----------------------------------------
 
 sajidmc: The MakefileHPC is created to compile the S4 in HPC environment without
 root access. Also added an example for python extension testing: 
