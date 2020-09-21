@@ -1,11 +1,11 @@
 CONDA_INC = $(CONDA_PREFIX)/lib/
 CONDA_LIB = $(CONDA_PREFIX)/lib/
 
-BLAS_LIB = -L$(CONDA_LIB) -lmkl_rt
-LAPACK_LIB = -L$(CONDA_LIB) -lmkl_rt
+# BLAS_LIB = -L$(CONDA_LIB) -lmkl_core_dll -lmkl_rt
+# LAPACK_LIB = -L$(CONDA_LIB) -lmkl_core_dll -lmkl_rt
 
-# BLAS_LIB = -L$(CONDA_LIB) -lopenblas
-# LAPACK_LIB = -L$(CONDA_LIB) -lopenblas
+BLAS_LIB = -L$(CONDA_LIB) -lopenblas
+LAPACK_LIB = -L$(CONDA_LIB) -lopenblas
 
 # FFTW3_INC = -I$(CONDA_INC)/include/
 # FFTW3_LIB = -L$(CONDA_LIB) -lfftw3

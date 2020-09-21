@@ -7,32 +7,35 @@ source:
   path: ../../
 
 build:
-  number: 6
+  number: 5
 
 requirements:
   build:
-    - python {{ python }}
-    - mkl-devel
-    - numpy {{ numpy }}
-    - setuptools
-    - libboost
-    - suitesparse
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - python {{ python }}
+    - setuptools
+    - numpy {{ numpy }}
+    - libboost
+    - suitesparse
+    - mkl-devel [win]
+    - openblas [unix]
 
   host:
     - python {{ python }}
-    - mkl-devel
     - numpy {{ numpy }}
     - libboost
     - suitesparse
+    - mkl-devel [win]
+    - openblas [unix]
 
   run:
     - python {{ python }}
-    - {{ pin_compatible('mkl') }}
     - {{ pin_compatible('numpy') }}
     - {{ pin_compatible('libboost') }}
     - {{ pin_compatible('suitesparse') }}
+    - {{ pin_compatible('mkl') }} [win]
+    - {{ pin_compatible('openblas') }} [unix]
 
 test:
   imports:
